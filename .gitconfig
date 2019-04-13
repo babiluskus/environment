@@ -1,0 +1,44 @@
+[user]
+        email = 
+        name =
+[core]
+        repositoryformatversion = 0
+        filemode = true
+        bare = false
+        logallrefupdates = true
+        whitespace=-indent-with-non-tab,trailing-space,cr-at-eol
+        editor = vim
+        pager = less -x3 -i -n
+[push]
+        default = tracking
+[pull]
+        rebase = true
+[bash]
+        showDirtyState = false
+[grep]
+        lineNumber = true
+        extendedRegexp = true
+[diff]
+#external = /tmp/meld_diff.sh
+[show]
+        wordregex =[[:alnum:]]+|[^[:space:]]
+        renames = true
+        decorate = full
+[alias]
+        man = help
+
+        co = checkout
+        ci = commit
+        br = branch
+        st = status -s -b
+        di = diff --color --patience -M --no-prefix
+        wi = diff --color --patience -M --no-prefix --word-diff=color -w
+        hist = log --graph --decorate --pretty=oneline --abbrev-commit --date-order --boundary
+        bist = log --graph --decorate --pretty=oneline --abbrev-commit --date-order --boundary --branches
+        hidd = log --decorate --graph --pretty=format:'%C(green)%h%C(reset) %ad%d %an' --date-order --date=short
+        last = whatchanged --patience -M --stat
+
+        assume = update-index --assume-unchanged
+        unassume = update-index --no-assume-unchanged
+
+        files-assumed = !git ls-files -v | grep ^[[:lower:]]
